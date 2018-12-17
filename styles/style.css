@@ -1,0 +1,37 @@
+/* ////Override radimo tako što “pojačavamo” selektore na već postojeće klase ili pomoću !important komande. */
+
+
+
+    html {
+        font-size: 14px !important;
+    }
+
+  
+
+    div > nav .container {
+        background-color: #b34848 !important;
+    }
+
+    h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    
+    color: red !important;
+}
+
+.blog-post-title {
+    color: red !important;
+}
+
+a {
+    color: red;
+  }
