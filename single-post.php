@@ -46,13 +46,15 @@
     ?>
                <li>
                    <hr>
-                    <p><?php echo $comment->author; ?></p>
-                    <p><?php echo $comment->body; ?></p>
+                    <button id = 'button' class="test btn btn-default">Hide comments</button>
+                    <button id = 'button' class="show btn btn-default">Show comments</button>
+
+                    <p class='test'><?php echo $comment->author; ?></p>
+                    <p class='test'><?php echo $comment->body; ?></p>
                 </li>
             <?php
 }?>
         </ul>
-
 
         </div><!-- /.blog-main -->
 

@@ -16,11 +16,11 @@
     <!-- Custom styles for this template -->
     <link href="styles/blog.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
-
+<script type="text/javasctipt" src="show-hide.js"></script>
 <header>
     <div class="blog-masthead">
         <div class="container">

@@ -6,7 +6,7 @@
         font-size: 14px !important;
     }
 
-  
+
 
     div > nav .container {
         background-color: #b34848 !important;
@@ -24,7 +24,7 @@ h5,
 .h5,
 h6,
 .h6 {
-    
+
     color: red !important;
 }
 
@@ -35,3 +35,4 @@ h6,
 a {
     color: red;
   }
+
