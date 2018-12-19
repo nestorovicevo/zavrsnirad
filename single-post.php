@@ -45,6 +45,7 @@
             <?php foreach ($singlePost->comments as $comment) {
     ?>
                <li>
+                   <hr>
                     <p><?php echo $comment->author; ?></p>
                     <p><?php echo $comment->body; ?></p>
                 </li>
