@@ -43,4 +43,18 @@ class PostsDB
 
         return $results[0];
     }
+
+    public function latest(int $limit = 5)
+    {
+        $sqlQuery = 'SELECT * FROM blog.posts ORDER BY created_at DESC LIMIT ' . $limit . ';';
+        $statement = $this->connection->prepare($sqlQuery);
+        // izvrsavamo upit
+        $statement->execute();
+        // zelimo da se rezultat vrati kao asocijativni niz.
+        // ukoliko izostavimo ovu liniju, vratice nam se obican, numerisan niz
+        // $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $statement->setFetchMode(PDO::FETCH_OBJ);
+        // vracamo rezultat upita, ako prosledimo gore PDO::FETCH_OBJ dobicemo rezultat kao niz objekata, a to nam treba
+        return $statement->fetchAll();
+    }
 }
