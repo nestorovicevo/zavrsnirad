@@ -14,15 +14,19 @@ class CommentsDB
         $sql = 'SELECT * FROM blog.comments where post_id =' . $postId;
         $statement = $this->connection->prepare($sql);
 
-        // izvrsavamo upit
         $statement->execute();
 
-        // zelimo da se rezultat vrati kao asocijativni niz.
-        // ukoliko izostavimo ovu liniju, vratice nam se obican, numerisan niz
         $statement->setFetchMode(PDO::FETCH_OBJ);
 
         $results = $statement->fetchAll();
 
         return $results;
+    }
+
+    public function insert(string $author, string $body, int $postId)
+    {
+        $sql = 'INSERT INTO comments (author, body, post_id) VALUES (\'' . $author . '\',\'' . $body . '\',' . $postId . ')';
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
     }
 }

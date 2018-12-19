@@ -46,8 +46,8 @@ class PostsDB
 
     public function latest(int $limit = 5)
     {
-        $sqlQuery = 'SELECT * FROM blog.posts ORDER BY created_at DESC LIMIT ' . $limit . ';';
-        $statement = $this->connection->prepare($sqlQuery);
+        $sql = 'SELECT * FROM blog.posts ORDER BY created_at DESC LIMIT ' . $limit . ';';
+        $statement = $this->connection->prepare($sql);
         // izvrsavamo upit
         $statement->execute();
         // zelimo da se rezultat vrati kao asocijativni niz.

@@ -28,12 +28,12 @@
 
             <h3>Leave a Comment</h3>
 
-            <form action="comments.php" method="POST">
+            <form action="create-comment.php" method="POST">
                 <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" />
+                <input type="text" class=" alert alert-danger" id="name" name="name" />
 
                 <label for="name">Your Comment:</label>
-                <textarea id="comment" name="comment"></textarea>
+                <textarea id="comment" class=" alert alert-danger" name="comment"></textarea>
 
                 <input type="hidden" name="post_id" value="<?php echo $postId?>"/>
 
@@ -46,8 +46,8 @@
     ?>
                <li>
                    <hr>
-                    <button id = 'button' class="test btn btn-default">Hide comments</button>
-                    <button id = 'button' class="show btn btn-default">Show comments</button>
+                    <button  class="test btn btn-default">Hide comments</button>
+                    <button  class="show btn btn-default">Show comments</button>
 
                     <p class='test'><?php echo $comment->author; ?></p>
                     <p class='test'><?php echo $comment->body; ?></p>
