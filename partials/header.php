@@ -1,3 +1,14 @@
+<?php
+    require 'connectToDB/connectionConfig.php';
+    require 'connectToDB/connection.php';
+    require 'connectToDB/postsDB.php';
+    require 'connectToDB/commentsDB.php';
+
+    $connection = Connection::make($servername, $dbname, $username, $password);
+    $postsDB = new PostsDB($connection);
+    $commentsDB = new CommentsDB($connection);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
