@@ -5,7 +5,7 @@
     require 'connectToDB/commentsDB.php';
 
     $postId = (int)$_REQUEST['id'];
-    $connection = Connection::make('127.0.0.1', 'blog', 'root', 'root');
+    $connection = Connection::make('127.0.0.1', 'blog', 'root', 'vivify');
     $postsDB = new PostsDB($connection);
     $singlePost = $postsDB->getById($postId);
     $commentsDB = new CommentsDB($connection);
@@ -22,7 +22,13 @@
             <p class="blog-post-meta"><?php echo $singlePost->created_at;?> by <a href="#"><?php echo $singlePost->author;?></a></p>
 
             <p><?php echo $singlePost->body?></p>
+            <a href='/delete-post.php?id=<?php echo $singlePost->id; ?>'>
+            
+            <input type='button' class='btn btn-default' value='Delete this post' onClick="confirm('do you really want this')" value="click"/>
+</a>
         </div>
+
+        
 
         <div id="respond">
 
@@ -38,8 +44,10 @@
                 <input type="hidden" name="post_id" value="<?php echo $postId?>"/>
 
                 <input type="submit" value="Submit" name="save"/>
-            </form>
+            </form><br>
+
         </div>
+     
 
         <button  onclick= 'myFunction()' id='myButton' class='btn btn-default'>Hide comments</button>
         <div id='comment-list'>

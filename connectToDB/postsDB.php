@@ -64,4 +64,11 @@ class PostsDB
         $statement = $this->connection->prepare($sql);
         $statement->execute();
     }
+
+    public function delete(int $id)
+    {
+        $sql = 'DELETE FROM posts WHERE id=' . $id;
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+    }
 }

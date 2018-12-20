@@ -8,7 +8,7 @@
         $body = $_POST['comment'];
         $postId = (int)$_POST['post_id'];
 
-        $connection = Connection::make('127.0.0.1', 'blog', 'root', 'root');
+        $connection = Connection::make('127.0.0.1', 'blog', 'root', 'vivify');
         $commentsDB = new CommentsDB($connection);
         $commentsDB->insert($author, $body, $postId);
 
