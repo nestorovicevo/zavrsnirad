@@ -44,15 +44,18 @@
         <button  onclick= 'myFunction()' id='myButton' class='btn btn-default'>Hide comments</button>
         <div id='comment-list'>
         <ul>
-            <?php foreach ($singlePost->comments as $comment) {
+            <?php foreach ($singlePost->comments as $comment) :
     ?>
                <li>
                    <hr>
                     <p class='test'><?php echo $comment->author; ?></p>
                     <p class='test'><?php echo $comment->body; ?></p>
+                    <a href='/delete-comment.php?id=<?php echo $comment->id; ?>&post_id=<?php echo $postId; ?>'>
+                    <input type='button' class='btn btn-default' value='Delete'/>
+        </a>
                 </li>
-            <?php
-}?>
+
+            <?php endforeach;?>
         </ul>
         </div>
         </div><!-- /.blog-main -->

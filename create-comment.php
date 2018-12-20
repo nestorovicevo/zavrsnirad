@@ -14,3 +14,7 @@
 
         header('Location: http://localhost:8000/single-post.php?id=' . $postId);
     }
+
+    if (empty($author) || empty($body)) {
+        $alert = 'All fields are required!';
+    }

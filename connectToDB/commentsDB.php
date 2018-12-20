@@ -29,4 +29,11 @@ class CommentsDB
         $statement = $this->connection->prepare($sql);
         $statement->execute();
     }
+
+    public function delete(int $id)
+    {
+        $sql = 'DELETE FROM comments WHERE id=' . $id;
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+    }
 }
