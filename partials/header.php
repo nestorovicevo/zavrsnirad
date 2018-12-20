@@ -16,7 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="styles/blog.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
-    <script type="text/javasctipt" src="show-hide.js"></script>
+    <script type="text/javascript" src="javaScript/show-hide.js"></script>
 
 </head>
 

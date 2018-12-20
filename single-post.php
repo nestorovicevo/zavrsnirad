@@ -41,21 +41,20 @@
             </form>
         </div>
 
+        <button  onclick= 'myFunction()' id='myButton' class='btn btn-default'>Hide comments</button>
+        <div id='comment-list'>
         <ul>
             <?php foreach ($singlePost->comments as $comment) {
     ?>
                <li>
                    <hr>
-                    <button  class="test btn btn-default">Hide comments</button>
-                    <button  class="show btn btn-default">Show comments</button>
-
                     <p class='test'><?php echo $comment->author; ?></p>
                     <p class='test'><?php echo $comment->body; ?></p>
                 </li>
             <?php
 }?>
         </ul>
-
+        </div>
         </div><!-- /.blog-main -->
 
         <?php require 'partials/side-bar.php'?>
