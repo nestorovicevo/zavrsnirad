@@ -3,11 +3,11 @@
     require 'connectToDB/connection.php';
     require 'connectToDB/postsDB.php';
 
-    if ($_POST['name'] && $_POST['post'] && $_POST['title'] && $_POST['date']) {
-        $author = $_POST['name'];
-        $body = $_POST['post'];
+    if ($_POST['author'] && $_POST['body'] && $_POST['title']) {
+        $author = $_POST['author'];
+        $body = $_POST['body'];
         $title = $_POST['title'];
-        $createdAt = $_POST['date'];
+        $createdAt = date('Y-m-d H:i:s');
 
         $connection = Connection::make('127.0.0.1', 'blog', 'root', 'root');
         $postsDB = new PostsDB($connection);

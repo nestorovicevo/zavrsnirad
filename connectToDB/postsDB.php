@@ -58,9 +58,9 @@ class PostsDB
         return $statement->fetchAll();
     }
 
-    public function create(string $title, string $body, string $author, datetime $createdAt)
+    public function create(string $title, string $body, string $author, string $createdAt)
     {
-        $sql = 'INSERT INTO posts (author, body) VALUES (\'' . $title . '\',\'' . $body . '\',' . $author . '\',\'' . $createdAt . ')';
+        $sql = 'INSERT INTO posts (title, body, author, created_at) VALUES (\'' . $title . '\',\'' . $body . '\',\'' . $author . '\',\'' . $createdAt . '\');';
         $statement = $this->connection->prepare($sql);
         $statement->execute();
     }
