@@ -57,4 +57,11 @@ class PostsDB
         // vracamo rezultat upita, ako prosledimo gore PDO::FETCH_OBJ dobicemo rezultat kao niz objekata, a to nam treba
         return $statement->fetchAll();
     }
+
+    public function create(string $title, string $body, string $author, datetime $createdAt)
+    {
+        $sql = 'INSERT INTO posts (author, body) VALUES (\'' . $title . '\',\'' . $body . '\',' . $author . '\',\'' . $createdAt . ')';
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+    }
 }
