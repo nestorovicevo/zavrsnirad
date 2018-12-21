@@ -8,8 +8,9 @@
 
 
 
-    div > nav .container {
+    div > nav  .container {
         background-color: #b34848 !important;
+        color: white!important;
     }
 
     h1,
@@ -25,14 +26,20 @@ h5,
 h6,
 .h6 {
 
-    color: red !important;
+    color: #b34848
+    !important;
 }
 
 .blog-post-title {
-    color: red !important;
+    color: #b34848
+ !important;
 }
 
 a {
-    color: red;
+    color: #b34848
+!important    ;
   }
 
+nav > a {
+    color :white;
+}

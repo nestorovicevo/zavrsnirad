@@ -23,13 +23,13 @@
             </div>
             <div id="respond">
                 <h3>Leave a Comment</h3>
-                <form action="create-comment.php" method="POST">
+                <form name="comment-form" action="create-comment.php" onsubmit="return validateForm()" method="POST" >
                     <label for="name">Your Name:</label>
-                    <input type="text" class=" alert alert-danger" id="name" name="name" />
-                    <label for="name">Your Comment:</label>
-                    <textarea id="comment" class=" alert alert-danger" name="comment"></textarea>
+                    <input type="text" class=" alert alert-danger" id="name" name="name" required/><br>
+                    <label for="name">Your Comment:</label><br>
+                    <textarea id="comment" class=" alert alert-danger" name="comment" required></textarea><br>
                     <input type="hidden" name="post_id" value="<?php echo $postId?>"/>
-                    <input type="submit" value="Submit" name="save"/>
+                    <input type="submit" value="Send comment" name="save" onclick="validateForm()"/>
                 </form>
                 <br>
             </div>

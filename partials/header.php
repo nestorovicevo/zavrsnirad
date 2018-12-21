@@ -28,6 +28,8 @@
     <link href="styles/blog.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
     <script type="text/javascript" src="javaScript/show-hide.js"></script>
+    <script type="text/javascript" src="javaScript/validation.js"></script>
+
 
 </head>
 

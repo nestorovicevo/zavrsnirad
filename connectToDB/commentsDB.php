@@ -13,11 +13,8 @@ class CommentsDB
     {
         $sql = 'SELECT * FROM blog.comments where post_id =' . $postId;
         $statement = $this->connection->prepare($sql);
-
         $statement->execute();
-
         $statement->setFetchMode(PDO::FETCH_OBJ);
-
         $results = $statement->fetchAll();
 
         return $results;

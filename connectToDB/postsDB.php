@@ -11,18 +11,10 @@ class PostsDB
 
     public function allPosts()
     {
-        // pripremamo upit
         $sql = 'SELECT * FROM blog.posts ORDER by created_at DESC;';
         $statement = $this->connection->prepare($sql);
-
-        // izvrsavamo upit
         $statement->execute();
-
-        // zelimo da se rezultat vrati kao asocijativni niz.
-        // ukoliko izostavimo ovu liniju, vratice nam se obican, numerisan niz
         $statement->setFetchMode(PDO::FETCH_OBJ);
-
-        // punimo promenjivu sa rezultatom upita
 
         return $statement->fetchAll();
     }
@@ -31,14 +23,8 @@ class PostsDB
     {
         $sql = 'SELECT * FROM blog.posts where id =' . $id;
         $statement = $this->connection->prepare($sql);
-
-        // izvrsavamo upit
         $statement->execute();
-
-        // zelimo da se rezultat vrati kao asocijativni niz.
-        // ukoliko izostavimo ovu liniju, vratice nam se obican, numerisan niz
         $statement->setFetchMode(PDO::FETCH_OBJ);
-
         $results = $statement->fetchAll();
 
         return $results[0];
@@ -48,13 +34,9 @@ class PostsDB
     {
         $sql = 'SELECT * FROM blog.posts ORDER BY created_at DESC LIMIT ' . $limit . ';';
         $statement = $this->connection->prepare($sql);
-        // izvrsavamo upit
         $statement->execute();
-        // zelimo da se rezultat vrati kao asocijativni niz.
-        // ukoliko izostavimo ovu liniju, vratice nam se obican, numerisan niz
-        // $statement->setFetchMode(PDO::FETCH_ASSOC);
         $statement->setFetchMode(PDO::FETCH_OBJ);
-        // vracamo rezultat upita, ako prosledimo gore PDO::FETCH_OBJ dobicemo rezultat kao niz objekata, a to nam treba
+
         return $statement->fetchAll();
     }
 
